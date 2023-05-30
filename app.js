@@ -17,3 +17,4 @@ console.log(cardinality(99))
 
 
 console.log(vision(34315)); //proceso
+console.log(vision(-34315));

@@ -12,7 +12,7 @@ function range_vision(number) {
         return ("El número debe ser positivo");
     }
     const numStr = number.toString(); // paso a str
-    let valMinVis = null;
+    let valMinVis = 10000; //no funciona con null
     let minVis = false;
     for (let i = 0; i < numStr.length; i++) {
         const numActual = parseInt(numStr[i]);//valor a int
@@ -25,9 +25,31 @@ function range_vision(number) {
                 vision += parseInt(numStr[visIzq]);
                 visIzq--;
             }
-            
+            if (visDer < numStr.length) {
+                vision += parseInt(numStr[visDer]);
+                visDer++;
+            }
+        }
+ while (visIzq >= 0 || visDer < numStr.length) {
+            if (visIzq >= 0) {
+                vision += parseInt(numStr[visIzq]);
+                visIzq--;
+            }
+            if (visDer < numStr.length) {
+                vision += parseInt(numStr[visDer]);
+                visDer++;
+            }
+        }
+
+        if (valMinVis > vision) {
+            valMinVis = vision;
+            minVis = numActual === 1;
+        } else if (vision === valMinVis && numActual === 1) {
+            minVis = true;
+        }
     }
 
     return minVis;
 }
 
+module.exports = range_vision;
