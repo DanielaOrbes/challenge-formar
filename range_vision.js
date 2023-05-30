@@ -7,9 +7,27 @@ Imagine un número entero no negativo, digamos 34315. Cada dígito en el número
 Ahora bien, el rango de visión de un dígito define el llamado valor de visión, que es la suma de los dígitos dentro del rango de visión. Entonces, el valor de visión del primer dígito, 3 es 4+3+1=8. Para el segundo dígito, 4 el valor de visión es 3+3+1+5=12.
 */
 
+function range_vision(number) {
+    if (number < 0) {
+        return ("El número debe ser positivo");
+    }
+    const numStr = number.toString(); // paso a str
+    let valMinVis = null;
+    let minVis = false;
+    for (let i = 0; i < numStr.length; i++) {
+        const numActual = parseInt(numStr[i]);//valor a int
+        let vision = numActual;
+        let visIzq = i - 1;
+        let visDer = i + 1;
 
-function range_vision(params) {
-    
+        while (visIzq >= 0 || visDer < numStr.length) {
+            if (visIzq >= 0) {
+                vision += parseInt(numStr[visIzq]);
+                visIzq--;
+            }
+            
+    }
+
+    return minVis;
 }
 
-module.exports = range_vision();

@@ -19,4 +19,4 @@ function fizz_buzz(N) {
     }
     return array;
   }
-  module.exports = fizz_buzz(); 
+  module.exports = fizz_buzz; 

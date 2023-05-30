@@ -20,4 +20,4 @@ function number_cardinality(N) {
     }
   }
 
-  module.exports = number_cardinality();
+  module.exports = number_cardinality;
